@@ -1,8 +1,25 @@
 # Web Workers Demo
 Migrate Long Running JS onto a Web Worker
 
-### [Relevant Quiz from Browser Rendering Optimization](https://www.udacity.com/course/viewer#!/c-ud860/l-4138168623/e-4184098558/m-4150829139)
+# Description
 
-### [Relevant solution from Browser Rendering Optimization](https://www.udacity.com/course/viewer#!/c-ud860/l-4138168623/e-4184098558/m-4146278980)
+This app allows the user to upload an image in a canvas, and apply a few transformations on it :
 
-Working on the quiz? Start by examining index.html and the JavaScript files linked inside it.
+ - Invert colors
+ - Chroma
+ - Greyscale
+ - Vibrant
+ - Revert to original
+ 
+# Optimizations
+
+Two optimizations have been applied so as to eliminate the jank.
+
+ - the processing of the image has been deported into a web worker
+ - the code of the web worker has been optimized, by getting the algorithm function to apply on the image only once
+   
+# Potential optimizations
+
+Depending on the size of the loaded image, the function getting the image data from the canvas can be quite heavy, thus freezing the UI.
+
+### [Udacity course on Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860)
