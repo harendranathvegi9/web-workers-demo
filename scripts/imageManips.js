@@ -1,6 +1,6 @@
 // Image manipulation logic from github.com/jwill/psychic-lana
 
-function manipulate(type, r, g, b, a) {
+function getProcessingFunction(type) {
 
     var func = function () {
     };
@@ -60,5 +60,5 @@ function manipulate(type, r, g, b, a) {
             break;
     }
 
-    return func(r, g, b, a);
+    return func;
 }
